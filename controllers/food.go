@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"golang-restaurant-management/database"
 	"golang-restaurant-management/models"
 	"net/http"
@@ -9,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"golang.org/x/net/context"
 )
@@ -58,7 +60,35 @@ func CreateFood() gin.HandlerFunc {
 			return
 		}
 
-		foodCollection.FindOne(ctx, bson.M{"menu_id":food.MenuId}).Decode(&menu)
+		err := menuCollection.FindOne(ctx, bson.M{"menu_id":food.MenuId}).Decode(&menu)
+		defer cancel()
+
+		if err != nil {
+			msg := fmt.Sprintf("menu is not found")
+			c.JSON(http.StatusInternalServerError, gin.H{"error":msg})
+			return
+		}
+
+
+		food.CreatedAt, _ = time.Parse(time.RFC3339, time.Now()).Format(time.RFC3339)
+		food.UpdatedAt, _ = time.Parse(time.RFC3339, time.Now()).Format(time.RFC3339)
+		food.DeletedAt,_ = time.Parse(time.RFC3339, time.Now()).Format(time.RFC3339)
+
+		food.ID = primitive.NewObjectID()
+
+		food.FoodId = food.ID.Hex()
+		var num = toFixed(*food.Price, 2)
+		food.Price = &num
+
+		result, inserterr := foodCollection.InsertOne(ctx, food)
+		if inserterr != nil {
+			msg := fmt.Sprintf("food item is not created")
+			c.JSON(http.StatusInternalServerError, gin.H{"error":msg})
+			return
+		}
+    defer cancel()
+
+		c.JSON(http.StatusOK, result)
 
 	}
 }
