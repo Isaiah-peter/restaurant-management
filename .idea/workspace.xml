@@ -7,16 +7,7 @@
     <list default="true" id="a72bd93d-1861-414a-bba4-6491c29282ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/food.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/food.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/orderitem.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/orderitem.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/food.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/food.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/invoice.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/invoice.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/menu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/noteModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/noteModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orderitem.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orderitem.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/table.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/table.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/orderitem.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderitem.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/menu.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
